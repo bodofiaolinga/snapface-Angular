@@ -1,0 +1,13 @@
+<div class="face-snap-card"[ngClass]="{snapped:userHasSnapped}" >
+<h2>{{ facesnap.title |uppercase}}</h2>
+@if(facesnap.location){
+    <p>localisation:{{facesnap.location}}</p>
+}
+<img [src]="facesnap.imageUrl" [alt]="facesnap.title">
+<p>{{ facesnap.description }}</p>
+<p>facesnap creer le {{ facesnap.createdAt|date}}
+<p>
+    <button (click)="OnSnap()">{{SnapButtonText}}</button>
+    <span [ngStyle]="{color:'rgb(0,'+facesnap.snap+',0)'}">👍 {{facesnap.snap}}</span>
+</p>
+</div>
